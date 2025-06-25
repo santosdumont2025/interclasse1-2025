@@ -24,6 +24,12 @@ header {
     border-bottom: #ffcc00 4px solid; /* Amarelo para detalhe */
 }
 
+/* === ESTILO PARA O LOGO ADICIONADO AQUI === */
+.logo {
+    height: 120px; /* Define a altura do logo */
+    margin-bottom: 10px; /* Cria um espaço entre o logo e o título */
+}
+
 header h1 {
     margin: 0;
     font-size: 2.5rem;
@@ -75,26 +81,18 @@ main {
     margin-bottom: 20px;
 }
 
-/* === CÓDIGO DA GALERIA CORRIGIDO === */
 .grid-imagens {
     display: grid;
-    /* Cria 4 colunas de largura igual */
     grid-template-columns: repeat(4, 1fr);
-    /* Espaçamento entre as imagens */
     gap: 16px;
 }
 
 .grid-imagens img {
     width: 100%;
-    /* Proporção da imagem de 4:3 */
     aspect-ratio: 4 / 3;
-    /* Garante que a imagem preencha o espaço sem distorcer */
     object-fit: cover;
-    /* Bordas arredondadas (opcional) */
     border-radius: 8px;
 }
-/* === FIM DA CORREÇÃO === */
-
 
 /* Rodapé */
 footer {
@@ -108,7 +106,6 @@ footer {
 /* === AJUSTE PARA TELAS MENORES (RESPONSIVIDADE) === */
 @media (max-width: 992px) {
     .grid-imagens {
-        /* Em telas de tablet, mostra 3 colunas */
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -117,8 +114,10 @@ footer {
     .container {
         width: 95%;
     }
+    header h1 {
+        font-size: 2rem; /* Diminui um pouco o título principal em telas pequenas */
+    }
     .grid-imagens {
-        /* Em telas de celular, mostra 2 colunas */
         grid-template-columns: repeat(2, 1fr);
     }
 }
