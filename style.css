@@ -16,33 +16,51 @@ body {
 }
 
 /* === CABEÇALHO ATUALIZADO === */
-header {
-    background: #004d99;
-    color: #fff;
-    padding: 1rem 0;
-    border-bottom: #ffcc00 4px solid;
+.header-com-colunas {
+    display: flex; /* Transforma o header em um contêiner flex */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-around; /* Distribui o espaço entre a logo e o texto */
+    padding: 20px; /* Adiciona um pouco de padding ao cabeçalho */
+    background-color: #f0f0f0; /* Um fundo para o cabeçalho, opcional */
+    border-bottom: 1px solid #ccc; /* Uma linha para separar, opcional */
 }
 
-/* Usando Flexbox para alinhar logo e texto */
-header .container {
-    display: flex;
-    align-items: center; /* Alinha verticalmente o logo e o texto */
+.coluna-logo {
+    /* Ajustes para a coluna da logo, se necessário */
+    flex-shrink: 0; /* Impede que a logo encolha demais */
 }
 
-/* Logo menor e com espaço à direita */
-.logo {
-    height: 90px;
-    margin-right: 25px; /* Espaço entre o logo e o texto */
+.coluna-logo .logo {
+    max-width: 150px; /* Define um tamanho máximo para a logo */
+    height: auto; /* Mantém a proporção */
 }
 
-.header-texto h1 {
-    margin: 0;
-    font-size: 2.2rem;
+.coluna-texto {
+    /* Ajustes para a coluna de texto */
+    text-align: center; /* Centraliza o texto dentro da coluna */
+    margin-left: 20px; /* Adiciona um espaçamento entre a logo e o texto */
 }
 
-.header-texto p {
-    margin: 0;
-    font-size: 1.1rem;
+.coluna-texto h1 {
+    margin-top: 0; /* Remove margem superior padrão do h1 */
+    margin-bottom: 10px; /* Espaço após o título */
+}
+
+.coluna-texto p {
+    margin: 5px 0; /* Espaço entre os parágrafos */
+}
+
+/* Opcional: Para telas menores, você pode querer que eles fiquem um abaixo do outro */
+@media (max-width: 768px) {
+    .header-com-colunas {
+        flex-direction: column; /* Empilha a logo e o texto em telas menores */
+        text-align: center; /* Centraliza tudo */
+    }
+
+    .coluna-texto {
+        margin-left: 0; /* Remove o margin-left quando empilhado */
+        margin-top: 20px; /* Adiciona espaço acima do texto */
+    }
 }
 /* === FIM DA ATUALIZAÇÃO DO CABEÇALHO === */
 
