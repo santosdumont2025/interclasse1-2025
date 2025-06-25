@@ -15,30 +15,37 @@ body {
     padding: 0 20px;
 }
 
-/* Cabeçalho */
+/* === CABEÇALHO ATUALIZADO === */
 header {
-    background: #004d99; /* Azul escuro para o cabeçalho */
+    background: #004d99;
     color: #fff;
     padding: 1rem 0;
-    text-align: center;
-    border-bottom: #ffcc00 4px solid; /* Amarelo para detalhe */
+    border-bottom: #ffcc00 4px solid;
 }
 
-/* === ESTILO PARA O LOGO ADICIONADO AQUI === */
+/* Usando Flexbox para alinhar logo e texto */
+header .container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o logo e o texto */
+}
+
+/* Logo menor e com espaço à direita */
 .logo {
-    height: 120px; /* Define a altura do logo */
-    margin-bottom: 10px; /* Cria um espaço entre o logo e o título */
+    height: 90px;
+    margin-right: 25px; /* Espaço entre o logo e o texto */
 }
 
-header h1 {
+.header-texto h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
-header p {
+.header-texto p {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
+/* === FIM DA ATUALIZAÇÃO DO CABEÇALHO === */
+
 
 /* Conteúdo Principal */
 main {
@@ -114,9 +121,25 @@ footer {
     .container {
         width: 95%;
     }
-    header h1 {
-        font-size: 2rem; /* Diminui um pouco o título principal em telas pequenas */
+
+    /* Em telas pequenas, o logo volta para cima e centralizado */
+    header .container {
+        flex-direction: column;
     }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .header-texto {
+        text-align: center;
+    }
+    
+    .header-texto h1 {
+        font-size: 2rem;
+    }
+
     .grid-imagens {
         grid-template-columns: repeat(2, 1fr);
     }
